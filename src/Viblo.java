@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.stream.Stream;
+
 public class Viblo {
     public static void main(String[] args) {
 //        1) Java 9: Interface private method
@@ -14,16 +17,16 @@ public class Viblo {
 //        3) Java 9: Stream API improvement
 //        Stream<T> takeWhile(Predicate<? super T> predicate); => về tất cả các element thỏa mãn điều kiện, nê gặp phần tử không thoả điều kiện, dừng luôn. (khác 1 chút so với filter)
 //        Stream<T> dropWhile(Predicate<? super T> predicate); => loại bỏ tất cả các element thỏa mãn điều kiện và dừng lại cho đến khi gặp phần tử không thỏa mãn. (gặp phần tử không thoả thì các phần tử sau ko loại bỏ nữa)
-//        static <T> Stream<T> iterate(T seed, Predicate<? super T> hasNext, UnaryOperator<T> next);
+//        static <T> Stream<T> iterate(T seed, Predicate<? super T> hasNext, UnaryOperator<T> next); => Tạo 1 Stream với 3 param (element đầu tiên, điều kiện để dừng tạo element, cách tạo data cho element tiếp theo.)
 //        static <T> Stream<T> ofNullable(T t); => nó sẽ trả về stream chứa element đó nếu element not null, còn không sẽ trả về empty stream
 
 //        4) Java 9: Collection factory
-//        List<String> values = List.of("Hello", "World"); => Tạo List đơn giản hơn.
+//        List<String> values = List.of("Hello", "World"); => Tạo List 1 cách đơn giản hơn.
 
 //        5) Java 9: Java Module system => là 1 cấu trụúc, GG đi =))
 
 //        6) Java 10: var => Kiểu dư liệu là kiểu của data nhận được. hoạt động lúc compile time. (Trong java11, có thể khai báo var trong param của lambda.)
-//        Lombok cũng có var, và car val (final var)
+//        Lombok cũng có var, và cả val (final var)
 
 //        7) Java 11: String API improvement
 //        7.1) isBlank() : nó sẽ = trim() + isEmpty()
@@ -33,6 +36,7 @@ public class Viblo {
 
 //        8) Java 12: String API improvement
 //        8.1) indent(): chuỗi ban đầu được split thành nhiều line giống method lines(), sau đó mỗi line được indent (thêm khoảng trắng) dựa trên giá trị truyền vào [  value]
+
 //        8.2) transform(): apply function lên string hiện tại để tạo ra một kết quả mới
 //        var result = "Hello".transform(input -> input + " world");
 //        System.out.println(result); // Hello world
